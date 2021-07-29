@@ -1,0 +1,126 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.cardcontainer{
+    background: radial-gradient(rgb(77, 74, 74),grey);
+    min-height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow-y: scroll;
+    
+}
+
+.card{
+    height:450px;
+    width:350px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    
+}
+.card .circle {
+    position:absolute;
+
+    height:450px;
+    width:450px;
+    background-color: rgb(77, 74, 74);
+    clip-path: circle();
+    left:50%;
+    transform: translateX(-50%);
+    top:-150px;
+
+}
+.circle::before{
+    content:"";
+    position:absolute;
+    height:100%;
+    width:100%;
+    background: transparent;
+    box-shadow: 0 0 0 20px rgba(255,0,0 ,0.5);
+    border-radius: 50%;
+    top:-10px;
+    left:-10px;
+    z-index:100;
+    pointer-events: none;
+   
+}
+.imgcontainer{
+    position:absolute;
+    height:350px;
+    width:350px;
+    background: yellow;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:0;
+    
+}
+.imgcontainer img{
+    position:absolute;
+    top:0px;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition:0.5s ease;
+    transform-origin: top;
+}
+.imgcontainer img:hover{
+    transform: scale(1.5);
+    
+}
+.info{
+    position:absolute;
+    width:100%;
+    height:150px;
+    left:0;
+    bottom:0;
+    padding:10px 25px ;
+
+}
+.info .fa-linkedin {
+    background:#0077b5;
+    color:white;
+    padding:3px 3px;
+    
+    border-radius:2px ;
+}
+.info h2 {
+    margin-top:1rem ;
+    font-size: 1.7em;
+    color:#333;
+    font-weight: bolder;
+    margin-bottom: 1.05rem;
+    
+}
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size:1.25em;
+    
+}
+.about h4{
+   
+font-weight: 400;
+color:#e91e63;
+}
+.about .fa{
+    color:#e91e63;
+}
+@media only screen and (max-width: 600px) {
+    .cardcontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+        
+    }
+    .card{
+        margin-bottom: 1.25rem;
+    }
+}
